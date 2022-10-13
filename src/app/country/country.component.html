@@ -1,11 +1,42 @@
-<div class="country-container">
-  <div class="card">
-    <img src="../../assets/petoria.jpg" alt="country flag" />
-    <div class="country-description">
-      <h1>Petoria</h1>
-      <p>Population: 6</p>
-      <p>Region: Petoria</p>
-      <p>Capital: Petoria</p>
+<div class="header">
+  <p style="font-weight: 800">Where in the world?</p>
+  <div class="mode">
+    <i class="fa-regular fa-moon"></i><span>Dark Mode</span>
+  </div>
+</div>
+
+<div class="countries-container">
+  <input
+    [(ngModel)]="countryName"
+    (input)="countrySearch()"
+    type="text"
+    name="search"
+    placeholder="Search for a country..."
+  />
+  <select (change)="regionFilter()" [(ngModel)]="selectedRegion">
+    <option disabled>Filter by Region</option>
+    <option>Africa</option>
+    <option>Americas</option>
+    <option>Asia</option>
+    <option>Europe</option>
+    <option>Oceania</option>
+  </select>
+
+  <div *ngIf="countriesArray.length < 1 && error == false" class="loading">
+    Loading...
+  </div>
+
+  <div *ngIf="error == true" class="error"></div>
+
+  <div *ngIf="countriesArray.length > 0" class="country-container">
+    <div class="card" *ngFor="let country of countriesArray; let i = index">
+      <img [src]="countriesArray[i]?.flags.png" alt="country flag" />
+      <div class="country-description">
+        <h1>{{ countriesArray[i]?.name.common }}</h1>
+        <p>Population: {{ countriesArray[i]?.population }}</p>
+        <p>Region: {{ countriesArray[i]?.region }}</p>
+        <p>Capital: {{ countriesArray[i]?.capital }}</p>
+      </div>
     </div>
   </div>
 </div>
