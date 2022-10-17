@@ -1,0 +1,49 @@
+* {
+  --dark-elements: hsl(209, 23%, 22%);
+  --dark-background: hsl(207, 26%, 17%);
+  --dark-text: hsl(0, 0%, 100%);
+
+  --light-elements: hsl(0, 0%, 100%);
+  --light-background: hsl(0, 0%, 98%);
+  --light-input: hsl(0, 0%, 52%);
+  --light-text: hsl(200, 15%, 8%);
+
+  --main-font: "Nunito Sans", sans-serif;
+}
+
+::ng-deep * {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  font-family: var(--main-font);
+  background-color: var(--dark-background);
+  padding:5%;
+}
+
+button {
+  padding:0.5em 2em;
+  background-color: var(--dark-elements);
+  color:var(--dark-text);
+  border:none;
+  border-radius:5%;
+  box-shadow: 0px 0px 15px hsla(200, 15%, 8%, 0.3);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:hover i {
+  transform: translateX(-5px);
+  transition:0.2s;
+}
+
+.flex-container {
+  color:var(--dark-text);
+}
+
+.country-buttons {
+  margin-right:10px;
+}

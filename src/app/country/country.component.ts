@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { GetCountryService } from '../get-country.service';
 
 @Component({
   selector: 'app-country',
@@ -8,7 +9,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./country.component.css'],
 })
 export class CountryComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private countryService:GetCountryService) {}
 
   countries: any = [];
   countriesArray: any = [];
@@ -118,5 +119,13 @@ export class CountryComponent implements OnInit {
           this.countriesArray.push(this.countries[i]);
         }
       });
+  }
+
+  countryDetails() {
+    console.log('pusi ga');
+  }
+
+  setCountry(name: string) {
+    this.countryService.setName(name);
   }
 }
