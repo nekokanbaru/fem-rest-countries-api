@@ -31,6 +31,10 @@ button {
   box-shadow: 0px 0px 15px hsla(200, 15%, 8%, 0.3);
 }
 
+.back-button {
+  margin-top:5%;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -42,8 +46,38 @@ button:hover i {
 
 .flex-container {
   color:var(--dark-text);
+  margin-top:10%;
+  display:flex;
+  flex-direction: column;
+  gap:50px;
+  min-height:70vh;
+}
+
+@media (min-width: 1440px) {
+  .flex-container {
+    flex-direction: row;
+    margin-top: 5%;
+    gap:100px;
+    align-items: center;
+  }
+
+  .flex-container img {
+    width:100%;
+    object-fit: contain;
+    max-width:700px;
+  }
+
+  .back-button {
+    margin-top:0;
+  }
+}
+
+.country-description {
+  line-height: 2.5;
 }
 
 .country-buttons {
   margin-right:10px;
+  margin-top:10px;
 }
+

@@ -1,19 +1,21 @@
 <div class="countries-container">
-  <input
-    [(ngModel)]="countryName"
-    (input)="countrySearch()"
-    type="text"
-    name="search"
-    placeholder="Search for a country..."
-  />
-  <select (change)="regionFilter()" [(ngModel)]="selectedRegion">
-    <option disabled>Filter by Region</option>
-    <option>Africa</option>
-    <option>Americas</option>
-    <option>Asia</option>
-    <option>Europe</option>
-    <option>Oceania</option>
-  </select>
+  <div class="filters">
+    <input
+      [(ngModel)]="countryName"
+      (input)="countrySearch()"
+      type="text"
+      name="search"
+      placeholder="Search for a country..."
+    />
+    <select (change)="regionFilter()" [(ngModel)]="selectedRegion">
+      <option disabled>Filter by Region</option>
+      <option>Africa</option>
+      <option>Americas</option>
+      <option>Asia</option>
+      <option>Europe</option>
+      <option>Oceania</option>
+    </select>
+  </div>
 
   <div *ngIf="countriesArray.length < 1 && error == false" class="loading">
     Loading...

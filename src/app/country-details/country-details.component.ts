@@ -28,7 +28,7 @@ export class CountryDetailsComponent implements OnInit {
     this.countryName = this.countryService.getName();
  
     this.http
-      .get('https://restcountries.com/v3.1/name/' + this.countryName)
+      .get('https://restcountries.com/v3.1/name/' + this.countryName) // + this.countryName
       .pipe(
         map((responseData: any) => {
           const postsArray = [];

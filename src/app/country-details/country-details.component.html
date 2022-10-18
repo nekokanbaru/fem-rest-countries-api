@@ -4,27 +4,34 @@
 />
 
 <div class="container">
-    <button routerLink=""><i class="fa-solid fa-arrow-left"></i> Back</button>
+  <button class="back-button" routerLink="">
+    <i class="fa-solid fa-arrow-left"></i> Back
+  </button>
 
-    <div class="flex-container">
-        <img [src]="country[0].flags.png" alt="flag">
-        <h1>{{country[0].name.common}}</h1>
-        <p>Native Name: {{nativeName}}</p>
-        <p>Population: {{country[0].population}}</p>
-        <p>Region: {{country[0].region}}</p>
-        <p>Sub Region: {{country[0].subregion}}</p>
-        <p>Capital: {{country[0].capital}}</p>
-        <br/>
+  <div class="flex-container">
+    <img [src]="country[0].flags.png" alt="flag" />
 
-        <p>Top Level Domain: {{country[0].tld}}</p>
-        <p>Currencies: {{currencies}}</p>
-        <p>Languages: {{languages}}</p>
-        <br/>
+    <div class="country-description">
+      <h1>{{ country[0].name.common }}</h1>
+      <p><b>Native Name:</b> {{ nativeName }}</p>
+      <p><b>Population:</b> {{ country[0].population }}</p>
+      <p><b>Region:</b> {{ country[0].region }}</p>
+      <p><b>Sub Region:</b> {{ country[0].subregion }}</p>
+      <p><b>Capital:</b> {{ country[0].capital }}</p>
+      <br />
 
-        <p>Border Countries:</p>
-        <button class="country-buttons" *ngFor="let border of borderName;let i=index">
-            {{border}}
-        </button>
+      <p><b>Top Level Domain:</b> {{ country[0].tld }}</p>
+      <p><b>Currencies:</b> {{ currencies }}</p>
+      <p><b>Languages:</b> {{ languages }}</p>
+      <br />
 
+      <p><b>Border Countries:</b></p>
+      <button
+        class="country-buttons"
+        *ngFor="let border of borderName; let i = index"
+      >
+        {{ border }}
+      </button>
     </div>
+  </div>
 </div>
