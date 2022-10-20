@@ -63,7 +63,7 @@ export class CountryDetailsComponent implements OnInit {
         for(let i = 0; i<this.country[0].borders.length; i++) {
           this.getCountryName(this.country[0].borders[i]);
         }
-        console.log(this.borderName);
+        
       });
 
      

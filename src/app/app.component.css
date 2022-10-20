@@ -7,18 +7,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Space+Grotesk:wght@500&display=swap");
 
-* {
-  --dark-elements: hsl(209, 23%, 22%);
-  --dark-background: hsl(207, 26%, 17%);
-  --dark-text: hsl(0, 0%, 100%);
 
-  --light-elements: hsl(0, 0%, 100%);
-  --light-background: hsl(0, 0%, 98%);
-  --light-input: hsl(0, 0%, 52%);
-  --light-text: hsl(200, 15%, 8%);
-
-  --main-font: "Nunito Sans", sans-serif;
-}
 
 body,
 html {
@@ -52,6 +41,14 @@ html {
 
 .mode i {
   padding-right:0.5em;
+}
+
+.mode {
+  user-select: none;
+}
+
+.mode:hover {
+  cursor: pointer;
 }
 
 @media (min-width:1440px){

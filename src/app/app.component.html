@@ -5,8 +5,10 @@
 
 <div class="header">
   <p style="font-weight: 800">Where in the world?</p>
-  <div class="mode"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+  <div (click)="changeMode()" class="mode"><span>Dark Mode </span><i [class]="checkMode()"></i></div>
 </div>
+
+<!-- <i class="fa-solid fa-moon"></i> -->
 
 <div class="container">
   <router-outlet></router-outlet>
