@@ -113,6 +113,7 @@ select {
   width: 80%;
   max-width: 500px;
   min-height: 300px;
+  max-height: 600px;
   border-radius: 5%;
   overflow: hidden;
   margin-top: 10%;
@@ -122,13 +123,19 @@ select {
   box-shadow: 15px 0px 30px hsla(200, 15%, 8%, 0.6);
 }
 
+@media (min-width:1440px) {
+ .card {
+  max-height: 600px;
+}
+}
+
 .card:hover {
   cursor: pointer;
 }
 
 .card img {
   width: 100%;
-  max-height: 200px;
+  max-height: 300px;
   object-fit: cover;
 }
 
